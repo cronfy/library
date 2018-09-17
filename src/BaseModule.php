@@ -54,4 +54,16 @@ class BaseModule extends Module
 
         return $this->_businessLogic;
     }
+
+    public function getControllerPath()
+    {
+        // Yii определяет путь к контроллеру через алиас по controllerNamespace.
+        // Алиас создавать не хочется, так как это лишняя сущность, которая может
+        // конфликтовать с другими алиасами (мы - модуль и не знаем, какие алиасы
+        // уже используются в приложении). Поэтому определим путь к контроллерам
+        // своим способом.
+        $rc = new \ReflectionClass(get_class($this));
+        return dirname($rc->getFileName()) . '/controllers';
+    }
+
 }

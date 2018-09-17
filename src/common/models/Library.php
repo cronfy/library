@@ -8,10 +8,10 @@
 
 namespace cronfy\library\common\models;
 
-use cronfy\cart\common\models\JsonModelTrait;
 use cronfy\experience\php\tree\TreeTrait;
 use App;
 use cronfy\experience\yii2\ensureSave\EnsureSaveTrait;
+use cronfy\experience\yii2\JsonModelTrait;
 use cronfy\library\BaseModule;
 use mohorev\file\UploadBehavior;
 use paulzi\jsonBehavior\JsonBehavior;
