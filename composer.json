@@ -1,0 +1,17 @@
+{
+  "name": "cronfy/library",
+  "license": "MIT",
+  "description": "library",
+
+  "require": {
+    "php": ">=5.6.0",
+    "cronfy/customProperties": "dev-master",
+    "cronfy/experience": "dev-master"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "cronfy\\library\\": "src/"
+    }
+  }
+}

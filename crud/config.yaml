@@ -1,0 +1,8 @@
+appsPath: ../src/
+namespacePrefix: cronfy\library\
+items:
+  library:
+    model:
+      app: common
+    crud:
+      app: backend
