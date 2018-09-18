@@ -276,6 +276,9 @@ class Library extends \cronfy\library\common\models\crud\Library
     {
         $parent = parent::rules();
 
+        unset($parent['is_active/integer']);
+        $parent['is_active/boolean'] = ['is_active', 'boolean'];
+
         unset($parent['image/length']);
         //  отключено - некорректно работает, когда sid == null
         // пусть это обрабатывает mysql сам
