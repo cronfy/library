@@ -27,6 +27,7 @@ abstract class ConcreteLibrary extends Library
         // одним запросом не получится - нужно рекурсивно проходить по всем нодам,
         // у которых есть потомки.
         // Пока отключаем эту возможность, до момента, когда она реально потребуется.
+
         // Впрочем, если в condition передаются id, то ок.
         if (!(is_array($condition) && array_key_exists('id', $condition))) {
             throw new \Exception("Disabled: not implemented");
@@ -41,7 +42,13 @@ abstract class ConcreteLibrary extends Library
         // одним запросом не получится - нужно рекурсивно проходить по всем нодам,
         // у которых есть потомки.
         // Пока отключаем эту возможность, до момента, когда она реально потребуется.
-        throw new \Exception("Disabled: not implemented");
+
+        // Впрочем, если в condition передаются id, то ок.
+        if (!(is_array($condition) && array_key_exists('id', $condition))) {
+            throw new \Exception("Disabled: not implemented");
+        }
+
+        return parent::deleteAll($condition, $params);
     }
 
     /**
