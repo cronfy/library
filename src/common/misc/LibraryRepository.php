@@ -75,6 +75,10 @@ class LibraryRepository
 
         return $this->_itemsById[$id];
     }
+    
+    public function find() {
+        return Library::find();
+    }
 
 
 }
